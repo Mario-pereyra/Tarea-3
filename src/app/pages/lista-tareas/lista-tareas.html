@@ -1,0 +1,14 @@
+<div class="lista-tareas-container">
+  <h3>Lista de Tareas</h3>
+  <div class="tareas-list" *ngIf="tareas.length > 0; else noTareas">
+    <app-tarea-item
+      *ngFor="let tarea of tareas; let i = index; trackBy: trackByIndex"
+      [nombreTarea]="tarea"
+      [index]="i"
+      (tareaEliminada)="eliminarTarea($event)"
+    ></app-tarea-item>
+  </div>
+  <ng-template #noTareas>
+    <p class="no-tareas">No hay tareas agregadas aún. ¡Agrega tu primera tarea!</p>
+  </ng-template>
+</div>

@@ -1,0 +1,11 @@
+<div class="app-container">
+  <header class="app-header">
+    <h1>{{ title() }}</h1>
+  </header>
+
+  <main class="app-main">
+    <app-crear-tarea (tareaCreada)="agregarTarea($event)"></app-crear-tarea>
+
+    <app-lista-tareas [tareas]="tareas" (tareaEliminada)="eliminarTarea($event)"></app-lista-tareas>
+  </main>
+</div>
